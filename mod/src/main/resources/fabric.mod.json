@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "id": "pvpclient",
+  "version": "${version}",
+  "name": "PvP Client",
+  "description": "Switch PvP texture packs and presets from one in-game menu.",
+  "environment": "client",
+  "entrypoints": { "client": ["com.pvpclient.PvpClient"] },
+  "depends": { "fabricloader": ">=0.16.0", "minecraft": "1.21.x", "fabric-api": "*", "java": ">=21" }
+}
