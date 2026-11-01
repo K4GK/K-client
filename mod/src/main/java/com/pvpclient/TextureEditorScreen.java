@@ -101,7 +101,7 @@ public class TextureEditorScreen extends Screen {
     }
 
     @Override
-    public void onFilesDropped(List<Path> paths) {
+    public void filesDragged(List<Path> paths) {
         for (Path p : paths) {
             if (!p.toString().toLowerCase().endsWith(".png")) continue;
             try {
