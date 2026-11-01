@@ -17,7 +17,7 @@ public class PackMenuScreen extends Screen {
     private final List<ResourcePackProfile> available = new ArrayList<>();
     private final Map<String, List<String>> presets = Presets.load();
     private int page = 0;
-    private static final int PER_PAGE = 7;
+    private static final int PER_PAGE = 4;
 
     public PackMenuScreen(Screen parent) {
         super(Text.literal("PvP Client - Texture Packs"));
@@ -65,6 +65,12 @@ public class PackMenuScreen extends Screen {
                 .dimensions(cx - 120, y + 58, 118, 20).build());
         addDrawableChild(ButtonWidget.builder(Text.literal("Close"), b -> close())
                 .dimensions(cx + 2, y + 58, 118, 20).build());
+        addDrawableChild(ButtonWidget.builder(Text.literal("Style Manager"),
+                b -> MinecraftClient.getInstance().setScreen(new StyleManagerScreen(this)))
+                .dimensions(cx - 120, y + 84, 118, 20).build());
+        addDrawableChild(ButtonWidget.builder(Text.literal("Pack Builder"),
+                b -> MinecraftClient.getInstance().setScreen(new PackBuilderScreen(this)))
+                .dimensions(cx + 2, y + 84, 118, 20).build());
     }
 
     private void toggle(String id) {
